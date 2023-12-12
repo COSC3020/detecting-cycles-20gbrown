@@ -15,3 +15,9 @@ exercises.
 
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+## Answer
+
+The worse-case big $\Theta$ complexity of the 'hasCycle' is $O(V + E)$, where $V$ is the number of vertices or nodes and $E$ is the number of edges for a given graph. 
+
+The outer loop iterates over all nodes in the graph, in the worst case it makes $V$ iterations. For reach node in the outer loop, the DFS function is called. So each time the function is initializes a 'visited' set and sets the 'componentStart' varible, it takes constant time. The DFS traversal in the worst case, visits each node and each edge, which would give a time complexity of $O(V + E)$. The cycle detection in DFS takes constant time. So the outer loop has a complexity of $O(V)$ meaning the DFS function has a worst case time complexity of $O(V + E)$. 
