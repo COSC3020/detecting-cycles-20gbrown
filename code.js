@@ -6,17 +6,21 @@ function hasCycle(graph) {
         visited.add(node);
     
         for (let i = 0; i < graph[node].length; i++) {
-            const neighbor = graph[node][i];
-            console.log(`Checking neighbor ${neighbor}`);
+            const neighbor = graph[node][i] - 1;
+            console.log(`Checking neighbor ${neighbor + 1}`);
             
             if (!visited.has(neighbor)) {
-                if (dfs(neighbor, node, componentStart, visited)) {
+                const nextComponentStart = (i === 0) ? node : (neighbor === node) ? componentStart : neighbor;
+                if (dfs(neighbor, node, nextComponentStart, visited)) {
                     return true;
                 }
-            } else if (neighbor !== parent && (neighbor !== componentStart || node !== componentStart)) {
+            } else if (visited.has(neighbor) && neighbor !== parent && (neighbor !== componentStart || neighbor === node)) {
                 console.log(`Cycle detected at node ${node}, neighbor ${neighbor}`);
                 return true;
             }
+            
+            
+            
         }
     
         return false;
@@ -33,6 +37,10 @@ function hasCycle(graph) {
 
     return false;
 }
+
+
+
+
 
 
 

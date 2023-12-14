@@ -101,14 +101,14 @@ const graph1 = [
 ];
 assert.strictEqual(hasCycle(graph1), true, 'Test Case 1 failed');
 
-/* Test Case 2: Acyclic graph (This test case doesn't work)
-const graph2 = [
+// Test Case 2: Acyclic graph (This test case doesn't workco)
+var graph2 = [
     [1, 2],
     [],
-    [1],
+    [1], 
     [3]
 ];
-assert.strictEqual(hasCycle(graph2), false, 'Test Case 2 failed');*/
+assert.strictEqual(hasCycle(graph2), false, 'Test Case 2 failed');
 
 // Test Case 3: Graph with a cycle
 const graph3 = [
